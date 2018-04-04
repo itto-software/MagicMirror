@@ -27,6 +27,10 @@ var config = {
 
 	modules: [
 		{
+			module: 'mm-hide-all',
+			position: 'bottom_right'
+		},
+		{
 			module: "alert",
 		},
 		{
