@@ -31,6 +31,10 @@ var config = {
 			position: 'bottom_right'
 		},
 		{
+			module: 'heartate-camera',
+			position: 'lower_third'
+		},
+		{
 			module: "alert",
 		},
 		{
