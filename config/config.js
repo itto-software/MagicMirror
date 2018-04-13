@@ -27,6 +27,38 @@ var config = {
 
 	modules: [
 		{
+			module: 'voicecontrol',
+			position: 'bottom_left',
+			config: {
+				models: [
+					{
+						keyword: "showMirror",   // keyword 
+						description: "「鏡を表示、して」と言うと、情報が消えます",
+						file: "showMirror.pmdl", // trained model file name
+						message: "SHOW_MIRROR"   // notification message that's broadcast in the MagicMirror app
+					},
+					{
+						keyword: "smartMirror",
+						description: "「スマートミラー」と言うと、情報が表示されます",
+						file: "smartMirror.pmdl",
+						message: "SMART_MIRROR"
+					},
+					{
+						keyword: "vitalCheck",
+						description: "「バイタルチェック、して」と言うと、脈拍が表示されます",
+						file: "vitalCheck.pmdl",
+						message: "VITAL_CHECK"
+					},
+					{
+						keyword: "vitalCheckEnd",
+						description: "「バイタルチェック終了」と言うと、カメラ消えます",
+						file: "vitalCheck.pmdl",
+						message: "VITAL_CHECK"
+					}
+				]
+			}
+		},
+		{
 			module: 'mm-hide-all',
 			position: 'bottom_right'
 		},
