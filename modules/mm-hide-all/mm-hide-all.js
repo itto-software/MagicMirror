@@ -40,11 +40,11 @@ Module.register("mm-hide-all", {
 		this.overlay.className = "paint-it-black";
 
 		this.button.className = "hide-toggle";
-		this.button.appendChild(text);
+		this.button.appendChild(this.text);
 		this.text.innerHTML = "Hide";
 
-		this.wrapper.appendChild(button);
-		this.wrapper.appendChild(overlay);
+		this.wrapper.appendChild(this.button);
+		this.wrapper.appendChild(this.overlay);
 
 		$(this.button).on("click", function () {
 			if (this.hidden) {
