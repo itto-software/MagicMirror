@@ -37,30 +37,30 @@ Module.register("mm-hide-all", {
 		this.overlay = document.createElement("div");
 		this.hidden = true;
 
-		overlay.className = "paint-it-black";
+		this.overlay.className = "paint-it-black";
 
-		button.className = "hide-toggle";
-		button.appendChild(text);
-		text.innerHTML = "Hide";
+		this.button.className = "hide-toggle";
+		this.button.appendChild(text);
+		this.text.innerHTML = "Hide";
 
-		wrapper.appendChild(button);
-		wrapper.appendChild(overlay);
+		this.wrapper.appendChild(button);
+		this.wrapper.appendChild(overlay);
 
-		$(button).on("click", function () {
-			if (hidden) {
-				$(overlay).fadeIn(1000);
-				$(button).fadeTo(1000, 0.3);
-				$(text).html('Show');
-				hidden = false;
+		$(this.button).on("click", function () {
+			if (this.hidden) {
+				$(this.overlay).fadeIn(1000);
+				$(this.button).fadeTo(1000, 0.3);
+				$(this.text).html('Show');
+				this.hidden = false;
 			} else {
-				$(overlay).fadeOut(1000);
-				$(button).fadeTo(1000, 1);
-				$(text).html('Hide');
-				hidden = true;
+				$(this.overlay).fadeOut(1000);
+				$(this.button).fadeTo(1000, 1);
+				$(this.text).html('Hide');
+				this.hidden = true;
 			}
 		});
 
-		return wrapper;
+		return this.wrapper;
 	},
 	notificationReceived: function (notification, payload, sender) {
 		if (notification === "SHOW_MIRROR") {
