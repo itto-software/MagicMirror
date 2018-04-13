@@ -8,7 +8,6 @@
  */
 
 Module.register("mm-hide-all", {
-
 	getScripts: function () {
 		return ["modules/mm-hide-all/js/jquery.js"];
 	},
@@ -46,17 +45,18 @@ Module.register("mm-hide-all", {
 		this.wrapper.appendChild(this.button);
 		this.wrapper.appendChild(this.overlay);
 
+		var self = this;
 		$(this.button).on("click", function () {
-			if (this.hidden) {
-				$(this.overlay).fadeIn(1000);
-				$(this.button).fadeTo(1000, 0.3);
-				$(this.text).html('Show');
-				this.hidden = false;
+			if (self.hidden) {
+				$(self.overlay).fadeIn(1000);
+				$(self.button).fadeTo(1000, 0.3);
+				$(self.text).html('Show');
+				self.hidden = false;
 			} else {
-				$(this.overlay).fadeOut(1000);
-				$(this.button).fadeTo(1000, 1);
-				$(this.text).html('Hide');
-				this.hidden = true;
+				$(self.overlay).fadeOut(1000);
+				$(self.button).fadeTo(1000, 1);
+				$(self.text).html('Hide');
+				self.hidden = true;
 			}
 		});
 
@@ -64,7 +64,7 @@ Module.register("mm-hide-all", {
 	},
 	notificationReceived: function (notification, payload, sender) {
 		if (notification === "SHOW_MIRROR") {
-			this.showHideMirror(ture);
+			this.showHideMirror(true);
 		}
 
 		if (notification === "SMART_MIRROR") {
