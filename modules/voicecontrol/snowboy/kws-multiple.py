@@ -25,6 +25,7 @@ models = sys.argv[1:]
 
 def hotword_detected_callback():
     print("!Hotword Detected")
+    snowboydecoder.play_audio_file(snowboydecoder.DETECT_DING)
 
     
 # capture SIGINT signal, e.g., Ctrl+C

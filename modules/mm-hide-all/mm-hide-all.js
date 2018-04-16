@@ -26,7 +26,6 @@ Module.register("mm-hide-all", {
 			$(this.button).fadeTo(1000, 1);
 			$(this.text).html('Hide');
 		}
-		this.updateDom();
 	},
 	getDom: function () {
 
@@ -47,6 +46,7 @@ Module.register("mm-hide-all", {
 
 		var self = this;
 		$(this.button).on("click", function () {
+
 			if (self.hidden) {
 				$(self.overlay).fadeIn(1000);
 				$(self.button).fadeTo(1000, 0.3);
