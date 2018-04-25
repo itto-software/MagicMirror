@@ -1,0 +1,3 @@
+[submodule "modules/mm-hide-all"]
+	path = modules/mm-hide-all
+	url = git@github.com:itto-software/MagicMirror.git
