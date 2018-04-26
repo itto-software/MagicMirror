@@ -39,5 +39,14 @@ Module.register("MMM-PulseCamera", {
 	start: function () {
 		Log.info("Starting module: " + this.name);
 
+	},
+	notificationReceived: function (notification, payload, sender) {
+		if (notification === "VITAL_CHECK") {
+			this.show();
+		}
+
+		if (notification === "VITAL_CHECK_END") {
+			this.hide();
+		}
 	}
 });

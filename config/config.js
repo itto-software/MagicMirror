@@ -52,8 +52,8 @@ var config = {
 					{
 						keyword: "vitalCheckEnd",
 						description: "「バイタルチェック終了」と言うと、カメラが消えます",
-						file: "snowboy/vitalCheck.pmdl",
-						message: "VITAL_CHECK"
+						file: "snowboy/vitalCheckEnd.pmdl",
+						message: "VITAL_CHECK_END"
 					}
 				]
 			}
