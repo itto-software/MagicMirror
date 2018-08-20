@@ -54,13 +54,13 @@
             if (isSuccess) {
                 // 成功時はそのパラメータで輪郭線を描画, スコア表示
                 this.tracker.draw(this.canvasMain, this.tracker.getCurrentParameters())
-                this.canvasMainContext.font = "25px Georgia"
+                this.canvasMainContext.font = "30px Georgia"
                 this.canvasMainContext.fillStyle = "rgb(255, 255, 255)"
                 this.canvasMainContext.fillText("score=" + this.tracker.getScore(), 0, 20)
             }
             else {
                 // 失敗
-                this.canvasMainContext.font = "25px Georgia"
+                this.canvasMainContext.font = "30px Georgia"
                 this.canvasMainContext.fillStyle = "rgb(255, 255, 255)"
                 this.canvasMainContext.fillText("no face detected", 0, 20)
             }
@@ -70,7 +70,7 @@
 
             // 脈拍表示
             var heartRate = Math.round(this.model.heartRate);
-            this.canvasMainContext.font = "25px Georgia";
+            this.canvasMainContext.font = "30px Georgia";
             this.canvasMainContext.fillStyle = "rgb(255, 255, 255)";
             this.canvasMainContext.fillText("HeartRate : " + heartRate, 0, 40);
 
