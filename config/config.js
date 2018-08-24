@@ -33,7 +33,7 @@ var config = {
 				models: [
 					{
 						keyword: "showMirror",   // keyword 
-						description: "「鏡を表示、して」と言うと、情報が消えます",
+						description: "「鏡を表示して」と言うと、情報が消えます",
 						file: "snowboy/showMirror.pmdl", // trained model file name
 						message: "SHOW_MIRROR"   // notification message that's broadcast in the MagicMirror app
 					},
@@ -45,7 +45,7 @@ var config = {
 					},
 					{
 						keyword: "vitalCheck",
-						description: "「バイタルチェック、して」と言うと、脈拍が表示されます",
+						description: "「バイタルチェックして」と言うと、脈拍が表示されます",
 						file: "snowboy/vitalCheck.pmdl",
 						message: "VITAL_CHECK"
 					},
