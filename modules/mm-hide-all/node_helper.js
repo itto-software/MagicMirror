@@ -31,28 +31,34 @@ module.exports = NodeHelper.create({
         this.started = true;
         var self = this;
         // Initilize the keyword spotter
-        var params = ['./modules/mm-hide-all/AlexaClientSDKConfig.json']; //, modelFile1, modelFile2];
+        var params = ['./modules/mm-hide-all/AlexaClientSDKConfig.json', './modules/mm-hide-all/resources']; //, modelFile1, modelFile2];
 
         //var kwsProcess = spawn('python', ['./speech-osx/kws-multiple.py', modelFile1, modelFile2], { detached: false });
         var kwsProcess = spawn('./modules/mm-hide-all/SampleApp', params, { detached: false });
         // Handel messages from python script
-        kwsProcess.stderr.on('data', function (data) {
+        kwsProcess.stdout.on('data', function (data) {
             var message = data.toString();
-            console.log(message);
             var target_on = new RegExp(/mirror_on/);
             var target_off = new RegExp(/mirror_off/);
+            var listening = new RegExp(/Listening/);
+
             var on = target_on.test(message);
             var off = target_off.test(message);
-            if (on) {
-                self.sendSocketNotification("SHOW_MIRROR", model);
-            }
-            if (off) {
-                self.sendSocketNotification("SMART_MIRROR", model);
+            var islisten = listening.test(message);
+
+            if (islisten) {
+                console.log("listening...");
             }
 
-        })
-        kwsProcess.stdout.on('data', function (data) {
-            console.log(data.toString());
+            if (on) {
+                console.log("mirror on.");
+                self.sendSocketNotification("SHOW_MIRROR");
+            }
+            if (off) {
+                console.log("mirror off.");
+                self.sendSocketNotification("SMART_MIRROR");
+            }
+
         })
     }
 
