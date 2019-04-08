@@ -8,6 +8,11 @@
  */
 
 Module.register("mm-hide-all", {
+	start: function () {
+
+		this.sendSocketNotification("ALEXA-CONNECT", this.config);
+
+	},
 	getScripts: function () {
 		return ["modules/mm-hide-all/js/jquery.js"];
 	},
