@@ -35,8 +35,8 @@ function createWindow() {
 	if (config.kioskmode) {
 		electronOptionsDefaults.kiosk = true;
 	} else {
-		electronOptionsDefaults.fullscreen = true;
-		electronOptionsDefaults.autoHideMenuBar = true;
+		electronOptionsDefaults.fullscreen = false;
+		electronOptionsDefaults.autoHideMenuBar = false;
 	}
 
 	var electronOptions = Object.assign({}, electronOptionsDefaults, config.electronOptions);

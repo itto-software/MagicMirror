@@ -27,16 +27,8 @@ var config = {
 
 	modules: [
 		{
-	    module: "MMM-alexa",
-	    position: "top_right",
-	    config: {
-        avsDeviceId: "smart_mirror_test",
-        avsClientId: "amzn1.application-oa2-client.097b5731038c4a68a13f52a62f016a61",
-        avsClientSecret: "6e3c21a767663d0c50521be89794f378f080179b3e19e89c43ded0fc9eed0e34",
-        avsInitialCode: "ANxPGMCzdcKYVbymDitT",
-        enableRaspberryButton: false,
-        debug: true
-	    }
+			module: 'mm-hide-all',
+			position: 'bottom_right'
 		},
 		{
 			module: "alert",
@@ -58,6 +50,18 @@ var config = {
 					{
 						symbol: "calendar-check",
 						url: "https://www.google.com/calendar/ical/ja.japanese%23holiday%40group.v.calendar.google.com/public/basic.ics"
+					},
+					{
+						symbol: "calendar-check",
+						url: "https://calendar.google.com/calendar/ical/itto.ogata%40gmail.com/public/basic.ics"
+					},
+					{
+						symbol: "calendar-check",
+						url: "https://calendar.google.com/calendar/ical/itto.ogata2%40gmail.com/public/basic.ics"
+					},
+					{
+						symbol: "calendar-check",
+						url: "https://calendar.google.com/calendar/ical/itto.ogata3%40gmail.com/public/basic.ics"
 					}
 				]
 			}
