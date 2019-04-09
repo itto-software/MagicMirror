@@ -82,14 +82,18 @@ module.exports = NodeHelper.create({
 		var self = this;
 
 		// fetch identified.txt
-		var filepath = '/home/itto/work/ImageDetect2/identified.txt';
-		fs.watch(filepath, function (event, filename) {
-			if (event == 'change') {
-				console.log(event + ' to ' + filepath);
-				const userName = fs.readFileSync(filepath, { encoding: "utf-8" });
-				self.sendSocketNotification("CHANGE_CALENDAR", { userName: userName });
-			}
-		})
+		try {
 
+			var filepath = '/home/itto/work/ImageDetect2/identified.txt';
+			fs.watch(filepath, function (event, filename) {
+				if (event == 'change') {
+					console.log(event + ' to ' + filepath);
+					const userName = fs.readFileSync(filepath, { encoding: "utf-8" });
+					self.sendSocketNotification("CHANGE_CALENDAR", { userName: userName });
+				}
+			});
+		} catch (error) {
+			console.error(error);
+		}
 	}
 });

@@ -45,7 +45,7 @@ module.exports = NodeHelper.create({
             var on = target_on.test(message);
             var off = target_off.test(message);
             var islisten = listening.test(message);
-
+            console.log(message);
             if (islisten) {
                 console.log("listening...");
             }
